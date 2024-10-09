@@ -3,11 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-    background-color: #1b1b1b;
+    background-color: #0d1117;
     color: #e0e0e0;
     display: flex;
     justify-content: center;
@@ -25,7 +25,7 @@ body {
 
 /* Sidebar Section */
 .sidebar {
-    background-color: #2a2a2a;
+    background-color: #161b22;
     padding: 20px;
     border-radius: 15px;
     height: 100vh;
@@ -35,13 +35,14 @@ body {
 
 .logo img {
     display: block;
-    width: 100px;
+    width: 120px;
     height: auto;
     margin: 0 auto 20px;
 }
 
 nav ul {
     list-style-type: none;
+    padding-top: 20px;
 }
 
 nav ul li {
@@ -51,15 +52,16 @@ nav ul li {
 nav ul li a {
     color: #e0e0e0;
     text-decoration: none;
-    padding: 10px 20px;
-    background-color: #3a3a3a;
+    padding: 12px 20px;
+    background-color: #21262d;
     border-radius: 10px;
     display: block;
     transition: background-color 0.3s ease;
+    font-weight: 500;
 }
 
 nav ul li a:hover {
-    background-color: #4a4a4a;
+    background-color: #30363d;
 }
 
 .tweet-btn {
@@ -69,19 +71,23 @@ nav ul li a:hover {
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 30px;
     width: 100%;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 /* Feed Section */
 .feed {
-    background-color: #1e1e1e;
+    background-color: #161b22;
     padding: 20px;
     border-radius: 15px;
-    overflow: auto;
 }
 
 .post-input {
+    background-color: #21262d;
+    padding: 15px;
+    border-radius: 10px;
     margin-bottom: 20px;
 }
 
@@ -90,7 +96,7 @@ nav ul li a:hover {
     border: none;
     padding: 10px;
     border-radius: 10px;
-    background-color: #2a2a2a;
+    background-color: #2d333b;
     color: #e0e0e0;
     margin-bottom: 10px;
     resize: none;
@@ -105,33 +111,48 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-/* Post Styles */
-.post {
-    background-color: #272727;
-    padding: 15px;
-    margin-top: 20px;
+/* Post Card Styles */
+.post-card {
+    background-color: #21262d;
+    padding: 20px;
     border-radius: 10px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .post-user {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
-.post-user img {
+.post-user .avatar {
     border-radius: 50%;
     width: 50px;
     height: 50px;
     margin-right: 15px;
 }
 
+.username {
+    font-size: 16px;
+    font-weight: 600;
+    color: #58a6ff;
+}
+
 .post-content {
-    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #e0e0e0;
 }
 
 /* Right Sidebar */
 .right-sidebar {
-    background-color: #2a2a2a;
+    background-color: #161b22;
     padding: 20px;
     border-radius: 15px;
     height: 100vh;
@@ -140,6 +161,7 @@ nav ul li a:hover {
 }
 
 .trending h2 {
+    font-size: 18px;
     margin-bottom: 15px;
     color: #fff;
 }
@@ -147,13 +169,14 @@ nav ul li a:hover {
 .trending-list li {
     margin-bottom: 10px;
     padding: 10px;
-    background-color: #3a3a3a;
+    background-color: #21262d;
     border-radius: 8px;
     list-style: none;
     color: #fff;
 }
 
 .user-info h3 {
+    font-size: 18px;
     margin-top: 30px;
     color: #fff;
 }
@@ -164,7 +187,7 @@ nav ul li a:hover {
     margin-top: 15px;
 }
 
-.follow-suggestion img {
+.follow-suggestion .avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -187,15 +210,23 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #2a2a2a;
+    background-color: #161b22;
     padding: 15px;
     text-align: center;
     color: #e0e0e0;
     margin-top: 20px;
 }
-
-/* Background Fix */
-body {
-    background: #1b1b1b url('/img/background-image.png') no-repeat center center fixed;
-    background-size: cover;
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar, .right-sidebar {
+        display: none;
+    }
+    
+    .feed {
+        padding: 10px;
+    }
 }
