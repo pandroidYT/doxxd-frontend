@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoXXed - Social Media Clone</title>
+    <style>
+        /* General Reset and Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Grid Layout */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            display: grid;
+            grid-template-columns: 250px 1fr 300px;
+            grid-gap: 20px;
+        }
+
+        /* Left Sidebar */
+        .sidebar-left {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar-left nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            display: block;
+            padding: 12px 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            background-color: #272727;
+            font-size: 18px;
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .sidebar-left nav a:hover {
+            background-color: #4a4a4a;
+            transform: scale(1.05);
+        }
+
+        .sidebar-left .doxxed-logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #f0f0f0;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Feed Section */
+        .feed {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .feed-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+
+        .feed-header h1 {
+            font-size: 24px;
+            color: #f0f0f0;
+        }
+
+        .feed-header nav {
+            display: flex;
+        }
+
+        .feed-header nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            background-color: #272727;
+            border-radius: 12px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .feed-header nav a:hover {
+            background-color: #4a4a4a;
+            transform: scale(1.05);
+        }
+
+        /* Post Styles */
+        .post {
+            background-color: #272727;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .post:hover {
+            transform: scale(1.02);
+        }
+
+        .post-user {
+            display: flex;
+            align-items: center;
+        }
+
+        .post-user img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+        }
+
+        .post-user .username {
+            font-size: 18px;
+            font-weight: bold;
+            color: #f0f0f0;
+        }
+
+        .post-content {
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #d0d0d0;
+        }
+
+        /* Right Sidebar */
+        .sidebar-right {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .trending {
+            margin-top: 20px;
+        }
+
+        .trending h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #f0f0f0;
+        }
+
+        .trending-list {
+            list-style: none;
+        }
+
+        .trending-list li {
+            margin-bottom: 10px;
+            padding: 12px;
+            background-color: #272727;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .trending-list li:hover {
+            background-color: #4a4a4a;
+        }
+
+        /* Scrollbar Style */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar-left">
+            <div class="doxxed-logo">DoXXed</div>
+            <nav>
+                <a href="#">🏠 Home</a>
+                <a href="#">👥 Following</a>
+                <a href="#">🔍 Explore</a>
+                <a href="#">✉️ Messages</a>
+                <a href="#">👤 Profile</a>
+            </nav>
+        </div>
+
+        <!-- Feed Section -->
+        <div class="feed">
+            <div class="feed-header">
+                <h1>DoXXed Feed</h1>
+                <nav>
+                    <a href="#">Home</a>
+                    <a href="#">Following</a>
+                    <a href="#">Explore</a>
+                </nav>
+            </div>
+            
+            <!-- Example Post -->
+            <div class="post">
+                <div class="post-user">
+                    <img src="https://via.placeholder.com/50" alt="User Profile Picture">
+                    <div class="username">@user123</div>
+                </div>
+                <div class="post-content">
+                    Just posted my first message on DoXXed! Loving the dark theme and smooth interface!
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-user">
+                    <img src="https://via.placeholder.com/50" alt="User Profile Picture">
+                    <div class="username">@user456</div>
+                </div>
+                <div class="post-content">
+                    Trending tech news! Have you checked out the latest updates on DoXXed? #TechNews
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="sidebar-right">
+            <div class="trending">
+                <h2>Trending Now</h2>
+                <ul class="trending-list">
+                    <li>#TechNews</li>
+                    <li>#DoXXed</li>
+                    <li>#DarkTheme</li>
+                    <li>#SocialMedia</li>
+                    <li>#Trending</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
