@@ -33,9 +33,11 @@ body {
     top: 0;
 }
 
-.logo h2 {
-    color: #fff;
-    margin-bottom: 20px;
+.logo img {
+    display: block;
+    width: 100px;
+    height: auto;
+    margin: 0 auto 20px;
 }
 
 nav ul {
