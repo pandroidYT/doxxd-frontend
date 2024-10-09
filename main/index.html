@@ -7,21 +7,78 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Main Wrapper -->
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>DoXXd</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">🏠 Home</a></li>
+                    <li><a href="#">🔍 Explore</a></li>
+                    <li><a href="#">🔔 Notifications</a></li>
+                    <li><a href="#">✉️ Messages</a></li>
+                    <li><a href="#">📄 Profile</a></li>
+                </ul>
+            </nav>
+            <button class="tweet-btn">New Post</button>
+        </aside>
 
-    <section class="main-content">
-        <h1>Welcome to DoXXd</h1>
-        <p>This is the home page of DoXXd, the advanced social media platform.</p>
-    </section>
+        <!-- Feed Section -->
+        <main class="feed">
+            <div class="post-input">
+                <textarea placeholder="What's happening?" rows="3"></textarea>
+                <button>Post</button>
+            </div>
+
+            <!-- Example Post -->
+            <div class="post">
+                <div class="post-user">
+                    <img src="img/logo.png" alt="User Profile Picture">
+                    <div class="username">@user123</div>
+                </div>
+                <div class="post-content">
+                    Just posted my first update on DoXXd! #HelloWorld
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-user">
+                    <img src="img/logo.png" alt="User Profile Picture">
+                    <div class="username">@user456</div>
+                </div>
+                <div class="post-content">
+                    Trending tech news is the way to go. #Tech
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Sidebar Section -->
+        <aside class="right-sidebar">
+            <div class="trending">
+                <h2>Trending</h2>
+                <ul class="trending-list">
+                    <li>#DoXXdLaunch</li>
+                    <li>#DarkMode</li>
+                    <li>#Tech</li>
+                    <li>#SocialMedia</li>
+                </ul>
+            </div>
+
+            <div class="user-info">
+                <h3>Who to follow</h3>
+                <div class="follow-suggestion">
+                    <img src="img/logo.png" alt="User">
+                    <div class="follow-info">
+                        <p>@new_user</p>
+                        <button>Follow</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
 
     <!-- Footer -->
     <footer>
