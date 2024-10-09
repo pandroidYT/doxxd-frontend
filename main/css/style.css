@@ -78,6 +78,11 @@ nav ul li a:hover {
     background-color: #1e1e1e;
     padding: 20px;
     border-radius: 15px;
+    overflow: auto;
+}
+
+.post-input {
+    margin-bottom: 20px;
 }
 
 .post-input textarea {
@@ -187,4 +192,10 @@ footer {
     text-align: center;
     color: #e0e0e0;
     margin-top: 20px;
+}
+
+/* Background Fix */
+body {
+    background: #1b1b1b url('/img/background-image.png') no-repeat center center fixed;
+    background-size: cover;
 }
