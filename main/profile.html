@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoXXd - Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a3f;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .profile-container {
+            background-color: #2e2e5b;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+            width: 400px;
+            max-width: 90%;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-info img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border: none;
+            background-color: #3c3c66;
+            color: #eaeaea;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #d082ff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e89aff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <h1>Your Profile</h1>
+
+        <!-- User Profile Information -->
+        <div class="profile-info">
+            <img src="img/user1.png" alt="Profile Picture" id="profilePic">
+            <input type="file" id="profilePicInput" accept="image/*">
+            <input type="text" id="username" placeholder="Username">
+            <input type="text" id="bio" placeholder="Bio">
+            <button id="saveProfileBtn">Save Changes</button>
+        </div>
+
+        <p id="profileMessage"></p>
+    </div>
+
+    <script>
+        document.getElementById('saveProfileBtn').addEventListener('click', async () => {
+            const username = document.getElementById('username').value;
+            const bio = document.getElementById('bio').value;
+            const profilePicInput = document.getElementById('profilePicInput').files[0];
+            
+            // FormData to upload image
+            const formData = new FormData();
+            formData.append('username', username);
+            formData.append('bio', bio);
+            if (profilePicInput) {
+                formData.append('profilePic', profilePicInput);
+            }
+
+            const token = localStorage.getItem('token');
+            
+            try {
+                const response = await fetch('https://doxxd-backend.onrender.com/api/profile', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    document.getElementById('profileMessage').innerText = 'Profile updated successfully!';
+                    // Update the profile picture on the page
+                    document.getElementById('profilePic').src = URL.createObjectURL(profilePicInput);
+                } else {
+                    document.getElementById('profileMessage').innerText = 'Error updating profile: ' + data.msg;
+                }
+            } catch (err) {
+                console.error('Error:', err);
+                document.getElementById('profileMessage').innerText = 'Error updating profile';
+            }
+        });
+
+        // Load profile info on page load
+        window.onload = async function() {
+            const token = localStorage.getItem('token');
+            try {
+                const response = await fetch('https://doxxd-backend.onrender.com/api/profile', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    document.getElementById('username').value = data.user.username;
+                    document.getElementById('bio').value = data.user.bio;
+                    document.getElementById('profilePic').src = data.user.profilePicUrl;
+                }
+            } catch (err) {
+                console.error('Error:', err);
+            }
+        };
+    </script>
+</body>
+</html>
