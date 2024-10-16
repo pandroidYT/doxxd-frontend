@@ -178,5 +178,24 @@
             }, 1000);
         });
     </script>
+    <script>
+        document.getElementById('loginFormElem').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Simulate login action
+            document.getElementById('loginMessage').innerText = 'Login successful!';
+    
+            // Simulate profile setup check (this should be a check from your backend in a real application)
+            const profileSetupComplete = false; // Simulating that profile is not set up yet
+    
+            setTimeout(() => {
+                if (profileSetupComplete) {
+                    window.location.href = 'home.html';  // If profile is set up, redirect to home
+                } else {
+                    window.location.href = 'profile-setup.html';  // Redirect to profile setup if not done
+                }
+            }, 1000);
+        });
+    </script>
+    
 </body>
 </html>
