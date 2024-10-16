@@ -37,3 +37,38 @@ document.getElementById('signupForm').addEventListener('submit', async function(
         alert('There was an error connecting to the server. Please try again.');
     }
 });
+
+document.getElementById('signupForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    const userData = {
+        username: username,
+        email: email,
+        password: password
+    };
+
+    try {
+        const response = await fetch('https://doxxd-backend.onrender.com/api/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        });
+
+        if (response.ok) {
+            // Redirect to profile setup page after successful registration
+            window.location.href = '/profile-setup.html';
+        } else {
+            const errorData = await response.json();
+            alert(`Registration failed: ${errorData.msg}`);
+        }
+    } catch (error) {
+        console.error('Network error:', error);
+        alert('There was an error connecting to the server. Please try again.');
+    }
+});

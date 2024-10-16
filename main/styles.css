@@ -70,3 +70,32 @@ button:hover {
     background-color: var(--light-bg);
     color: var(--light-text);
 }
+
+.post {
+    background-color: var(--light-bg);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#feed {
+    margin-top: 20px;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
