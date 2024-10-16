@@ -6,7 +6,7 @@
     <title>DoXXd - Login/Sign Up</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Simple Styles for the Login/Sign-Up Page */
+        /* Styles for the Login and Sign-Up Page */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #1a1a3f;
@@ -31,6 +31,7 @@
             text-align: center;
             margin-bottom: 24px;
             font-size: 24px;
+            color: #ffffff;
         }
 
         .tabs {
@@ -157,14 +158,14 @@
             loginForm.classList.remove('active');
         });
 
-        // Login Form Submission
+        // Login Form Submission (simulated)
         document.getElementById('loginFormElem').addEventListener('submit', function(e) {
             e.preventDefault();
             // Simulate login action
             document.getElementById('loginMessage').innerText = 'Login successful!';
         });
 
-        // Sign-Up Form Submission
+        // Sign-Up Form Submission (simulated)
         document.getElementById('signupFormElem').addEventListener('submit', function(e) {
             e.preventDefault();
             // Simulate sign-up action
