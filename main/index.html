@@ -3,98 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoXXd - Home</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>DoXXd Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Main Wrapper -->
+<body class="dark-mode">
     <div class="container">
-        <!-- Sidebar Section -->
-        <aside class="sidebar">
-            <div class="logo">
-                <img src="img/logo.png" alt="DoXXd Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">🏠 Home</a></li>
-                    <li><a href="#">🔍 Explore</a></li>
-                    <li><a href="#">🔔 Notifications</a></li>
-                    <li><a href="#">✉️ Messages</a></li>
-                    <li><a href="#">📄 Profile</a></li>
-                    <li><a href="login.html">🔐 Login</a></li> <!-- New Login Link -->
-                </ul>
-            </nav>
-            <button class="tweet-btn">New Post</button>
-        </aside>
+        <h1>DoXXd Sign Up</h1>
+        <form id="signupForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
 
-        <!-- Feed Section -->
-        <main class="feed">
-            <div class="post-input">
-                <textarea placeholder="What's happening?" rows="3"></textarea>
-                <button>Post</button>
-            </div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
 
-            <!-- Example Post Card -->
-            <div class="post-card">
-                <div class="post-user">
-                    <img src="img/user1.png" alt="User Profile Picture" class="avatar">
-                    <div class="username">@user123</div>
-                </div>
-                <div class="post-content">
-                    Just posted my first update on DoXXd! #HelloWorld
-                </div>
-            </div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
 
-            <div class="post-card">
-                <div class="post-user">
-                    <img src="img/user2.png" alt="User Profile Picture" class="avatar">
-                    <div class="username">@user456</div>
-                </div>
-                <div class="post-content">
-                    Trending tech news is the way to go. #Tech
-                </div>
-            </div>
-        </main>
-
-        <!-- Right Sidebar Section -->
-        <aside class="right-sidebar">
-            <div class="trending">
-                <h2>Trending</h2>
-                <ul class="trending-list">
-                    <li>#DoXXdLaunch</li>
-                    <li>#DarkMode</li>
-                    <li>#Tech</li>
-                    <li>#SocialMedia</li>
-                </ul>
-            </div>
-
-            <div class="user-info">
-                <h3>Who to follow</h3>
-                <div class="follow-suggestion">
-                    <img src="img/user3.png" alt="User" class="avatar">
-                    <div class="follow-info">
-                        <p>@new_user</p>
-                        <button>Follow</button>
-                    </div>
-                </div>
-            </div>
-        </aside>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="mode-toggle">
+            <label>Light Mode</label>
+            <input type="checkbox" id="toggleMode">
+        </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 DoXXd</p>
-    </footer>
-    <script>
-        // Check if user is logged in
-        const token = localStorage.getItem('token');
-        
-        if (!token) {
-            // Redirect to login page if no token
-            window.location.href = 'login.html';
-        }
-    </script>
-    
+    <script src="script.js"></script>
 </body>
 </html>
