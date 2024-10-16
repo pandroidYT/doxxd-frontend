@@ -1,37 +1,77 @@
 :root {
-    --light-bg: #f0e8ff;
+    --light-bg: #f0f0ff;
     --light-text: #1a1a2e;
-    --dark-bg: #0e153a;
+    --dark-bg: #1b1f3b;
     --dark-text: #fff;
     --accent-color: #f72585;
+    --button-bg: #4267B2;
+    --button-text: white;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
     transition: background-color 0.3s, color 0.3s;
 }
 
-.container {
-    text-align: center;
-    background-color: var(--light-bg);
+.auth-container {
+    background-color: #222a50;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transition: background-color 0.3s;
 }
 
-h1 {
+.auth-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.auth-tabs button {
+    background: none;
+    border: none;
+    padding: 1rem;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--light-text);
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+.auth-tabs button.active {
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.auth-form {
+    display: none;
+    transition: opacity 0.5s;
+}
+
+.auth-form.active {
+    display: block;
+    opacity: 1;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    font-size: 24px;
     color: var(--accent-color);
 }
 
 label {
     display: block;
-    margin: 10px 0 5px;
+    text-align: left;
+    margin-bottom: 0.5rem;
 }
 
 input {
@@ -44,13 +84,15 @@ input {
 }
 
 button {
-    background-color: var(--accent-color);
-    color: white;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 15px;
 }
 
 button:hover {
@@ -61,41 +103,12 @@ button:hover {
     margin-top: 20px;
 }
 
-.dark-mode {
-    background-color: var(--dark-bg);
-    color: var(--dark-text);
-}
-
 .light-mode {
     background-color: var(--light-bg);
     color: var(--light-text);
 }
 
-.post {
-    background-color: var(--light-bg);
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 8px;
-}
-
-textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-#feed {
-    margin-top: 20px;
-}
-
-button {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
+.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
 }

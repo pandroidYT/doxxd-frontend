@@ -3,30 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DoXXd Sign Up</title>
+    <title>DoXXd - Sign Up or Sign In</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-mode">
-    <div class="container">
-        <h1>DoXXd Sign Up</h1>
-        <form id="signupForm">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+    <div class="auth-container">
+        <div class="auth-tabs">
+            <button id="signUpTab" class="active">Sign Up</button>
+            <button id="signInTab">Sign In</button>
+        </div>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
+        <!-- Sign-Up Form -->
+        <form id="signUpForm" class="auth-form active">
+            <h2>Create Your Account</h2>
+            <label for="signUpUsername">Username</label>
+            <input type="text" id="signUpUsername" name="username" required>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+            <label for="signUpEmail">Email</label>
+            <input type="email" id="signUpEmail" name="email" required>
+
+            <label for="signUpPassword">Password</label>
+            <input type="password" id="signUpPassword" name="password" required>
 
             <button type="submit">Sign Up</button>
         </form>
+
+        <!-- Sign-In Form -->
+        <form id="signInForm" class="auth-form">
+            <h2>Welcome Back!</h2>
+            <label for="signInEmail">Email</label>
+            <input type="email" id="signInEmail" name="email" required>
+
+            <label for="signInPassword">Password</label>
+            <input type="password" id="signInPassword" name="password" required>
+
+            <button type="submit">Sign In</button>
+        </form>
+
         <div class="mode-toggle">
             <label>Light Mode</label>
             <input type="checkbox" id="toggleMode">
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>
