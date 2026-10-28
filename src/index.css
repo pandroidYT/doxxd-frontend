@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-ink: #07071a;
+  --color-panel: #0f0f2b;
+  --color-raised: #17173d;
+  --color-line: #25255a;
+  --color-muted: #8d8dbd;
+  --color-text: #ececff;
+  --color-brand: #d082ff;
+  --color-brand-2: #ff7af0;
+  --color-blue: #2a3cf0;
+  --color-danger: #ff4d6d;
+
+  --animate-reveal: reveal 900ms ease-out;
+  @keyframes reveal {
+    0% { box-shadow: 0 0 0 0 rgb(255 77 109 / 0.9); background-color: rgb(255 77 109 / 0.25); }
+    100% { box-shadow: 0 0 0 14px rgb(255 77 109 / 0); }
+  }
+}
+
+html {
+  background: var(--color-ink);
+  color: var(--color-text);
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100dvh;
+  background:
+    radial-gradient(60rem 40rem at 10% -10%, rgb(42 60 240 / 0.18), transparent 60%),
+    radial-gradient(50rem 30rem at 110% 10%, rgb(208 130 255 / 0.12), transparent 60%),
+    var(--color-ink);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* The black bar that stands in for an anonymous author's name. */
+.redacted {
+  display: inline-block;
+  height: 0.85em;
+  border-radius: 2px;
+  vertical-align: -0.05em;
+  background: repeating-linear-gradient(90deg, #000 0 6px, #0b0b0b 6px 7px);
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06);
+}
+
+.stamp {
+  transform: rotate(-4deg);
+  border: 2px solid var(--color-danger);
+  color: var(--color-danger);
+  letter-spacing: 0.12em;
+}
