@@ -25,10 +25,13 @@ Start the [API](https://github.com/pandroidYT/doxxd-backend) first, then:
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
+npm start          # builds the site and serves it on http://localhost:5173
 ```
 
-By default it talks to `http://localhost:3000`. To point it somewhere else, copy `.env.example` to `.env` and set `VITE_API_URL`.
+It also prints a `Network:` address. Open that on any phone or laptop on the same Wi-Fi to use it there.
+While you're changing code, use `npm run dev` instead: it reloads the page every time you save.
+
+By default the site talks to port 3000 on the same machine. To point it somewhere else, copy `.env.example` to `.env` and set `VITE_API_URL`.
 
 ## Deploy (free)
 

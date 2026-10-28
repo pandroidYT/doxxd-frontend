@@ -1,4 +1,5 @@
-const API_URL = (import.meta.env.VITE_API_URL || "http://localhost:3000").replace(/\/$/, "");
+// Defaults to port 3000 on whatever machine served the page, so phones on the same Wi-Fi work too.
+const API_URL = (import.meta.env.VITE_API_URL || `${location.protocol}//${location.hostname}:3000`).replace(/\/$/, "");
 const TOKEN_KEY = "doxxd_token";
 
 export class ApiError extends Error {
