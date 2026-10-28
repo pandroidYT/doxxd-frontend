@@ -4,4 +4,6 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  // In dev, forward API calls to the backend (npm run dev in doxxd-backend).
+  server: { proxy: { "/api": "http://localhost:3000" } },
 });

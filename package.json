@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
-    "start": "npm run build && vite preview --host --port 5173",
     "preview": "vite preview --host",
     "typecheck": "tsc"
   },

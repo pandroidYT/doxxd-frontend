@@ -19,22 +19,8 @@ The web app for DoXXd: an anonymous social feed where anyone can spend a daily d
 | `/notifications` | Replies and doxxes |
 | `/login` | Sign up / log in |
 
-## Run it locally
+## Run it
 
-Start the [API](https://github.com/pandroidYT/doxxd-backend) first, then:
+This site is served by the [backend](https://github.com/pandroidYT/doxxd-backend). Follow the "Run it" steps there: `npm run setup` builds this site too, and `npm start` runs everything on http://localhost:3000.
 
-```bash
-npm install
-npm start          # builds the site and serves it on http://localhost:5173
-```
-
-It also prints a `Network:` address. Open that on any phone or laptop on the same Wi-Fi to use it there.
-While you're changing code, use `npm run dev` instead: it reloads the page every time you save.
-
-By default the site talks to port 3000 on the same machine. To point it somewhere else, copy `.env.example` to `.env` and set `VITE_API_URL`.
-
-## Deploy (free)
-
-On [Vercel](https://vercel.com) or [Netlify](https://netlify.com), import this repo and set the environment variable `VITE_API_URL` to your deployed API URL. Build command: `npm run build`. Output folder: `dist`. SPA routing is already configured (`vercel.json` / `public/_redirects`).
-
-Remember to add the frontend's URL to the API's `CORS_ORIGINS`.
+To work on the site with live reload: start the backend with `npm run dev`, then run `npm run dev` here and open http://localhost:5173. API calls are forwarded to the backend automatically.
